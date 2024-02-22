@@ -18,18 +18,21 @@ export const Default: Story = {
   },
 };
 
+export const _Button = () =>{ <Button label="click me" />}
+
+
 export const Primary: Story = {
   args: {
     label: 'Hello',
-    bgColor: 'amethyst',
-    color: 'emerald',
+    bgColor: 'electromagnetic',
+    color: 'skirret-green',
   },
 };
 
 export const Secondary: Story = {
   args: {
     label: 'Hello',
-    bgColor: 'peter-river',
-    color: 'amethyst',
+    bgColor: 'hint-of-pensive',
+    color: 'skirret-green',
   },
 };

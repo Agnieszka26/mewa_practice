@@ -1,0 +1,6 @@
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mNo configuration files have been found in your configDir (/home/jagna/Pulpit/web-amigos-mewa/mewa-workshop/apps/frontend/.storybook).[39m
+
+   Storybook needs "main.js" file, please add it (or pass a custom config dir flag to Storybook to tell where your main.js file is located at).
+   Pass --verbose to see the stacktrace.
+
