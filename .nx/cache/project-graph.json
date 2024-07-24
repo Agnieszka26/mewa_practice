@@ -4642,6 +4642,15 @@
         "hash": "sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g=="
       }
     },
+    "npm:@remix-run/router": {
+      "type": "npm",
+      "name": "npm:@remix-run/router",
+      "data": {
+        "version": "1.18.0",
+        "packageName": "@remix-run/router",
+        "hash": "sha512-L3jkqmqoSVBVKHfpGZmLrex0lxR5SucGA0sUfFzGctehw+S/ggL9L/0NnC5mw6P8HUWpFZ3nQw3cRApjjWx9Sw=="
+      }
+    },
     "npm:@rollup/pluginutils": {
       "type": "npm",
       "name": "npm:@rollup/pluginutils",
@@ -14848,6 +14857,24 @@
         "hash": "sha512-zXnPJ2m8+6oq9Nn8zsep/orts9vQv3elrpA+R8XTcW7DVVUJ9vwDwMXaBtykAYjMnkCIaOoK9vObyR7ZgFNlOw=="
       }
     },
+    "npm:react-router": {
+      "type": "npm",
+      "name": "npm:react-router",
+      "data": {
+        "version": "6.25.1",
+        "packageName": "react-router",
+        "hash": "sha512-u8ELFr5Z6g02nUtpPAggP73Jigj1mRePSwhS/2nkTrlPU5yEkH1vYzWNyvSnSzeeE2DNqWdH+P8OhIh9wuXhTw=="
+      }
+    },
+    "npm:react-router-dom": {
+      "type": "npm",
+      "name": "npm:react-router-dom",
+      "data": {
+        "version": "6.25.1",
+        "packageName": "react-router-dom",
+        "hash": "sha512-0tUDpbFvk35iv+N89dWNrJp+afLgd+y4VtorJZuOCXK0kkCWjEvb3vTJM++SYvMEpbVwXKf3FjeVveVEb6JpDQ=="
+      }
+    },
     "npm:read-cache": {
       "type": "npm",
       "name": "npm:read-cache",
@@ -17222,7 +17249,17 @@
       },
       {
         "source": "frontend",
+        "target": "npm:react-router-dom",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
         "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "frontend",
+        "target": "common-ui",
         "type": "static"
       },
       {
@@ -38654,6 +38691,40 @@
       {
         "source": "npm:react-resize-detector",
         "target": "npm:lodash",
+        "type": "static"
+      }
+    ],
+    "npm:react-router": [
+      {
+        "source": "npm:react-router",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-router",
+        "target": "npm:@remix-run/router",
+        "type": "static"
+      }
+    ],
+    "npm:react-router-dom": [
+      {
+        "source": "npm:react-router-dom",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-router-dom",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-router-dom",
+        "target": "npm:@remix-run/router",
+        "type": "static"
+      },
+      {
+        "source": "npm:react-router-dom",
+        "target": "npm:react-router",
         "type": "static"
       }
     ],

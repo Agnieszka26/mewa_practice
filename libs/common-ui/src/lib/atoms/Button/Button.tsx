@@ -1,7 +1,7 @@
 import { MouseEventHandler, ComponentProps  } from "react";
 import clsx from "clsx"
 
-// Można też tak typować z użyciem Record, co pilnuje, żeby w obiekcie były tylko i wyłącznie porządane klucze, jak to będziemy typować zależy tylko od nas ;) 
+// Można też tak typować z użyciem Record, co pilnuje, żeby w obiekcie były tylko i wyłącznie porządane klucze, jak to będziemy typować zależy tylko od nas ;)
 // const colors: Record< 'skirret-green' | 'electromagnetic' | 'hint-of-pensive', string> ={
 //   'skirret-green': `#44bd32`,
 //   'electromagnetic': "#2f3640",
@@ -27,14 +27,15 @@ type Props = {
 };
 
 
-export const Button = ({ 
-  label, 
-  bgColor, 
+export const Button = ({
+  label,
+  bgColor,
   className,
-  color, 
-  onClick, 
-  ...rest //ponieważ mam zdefiniowany component props to mogę sobie użyć spread rest i są przekazywane wszystkie html-owe atrybuty <3 i cudownie to działa pod warunkiem że nie mamy Picka ;) 
-}: Pick<ComponentProps<'button'>, 'className'|'onClick' >& Props) => {
+  color,
+  type,
+  onClick,
+  ...rest //ponieważ mam zdefiniowany component props to mogę sobie użyć spread rest i są przekazywane wszystkie html-owe atrybuty <3 i cudownie to działa pod warunkiem że nie mamy Picka ;)
+}: Pick<ComponentProps<'button'>, 'className'|'onClick'| "type" >& Props) => {
   const _color = color ? colors[color] : "";
   const _bgColor = bgColor ? colors[bgColor]: "";
 const classes = clsx(
@@ -46,7 +47,8 @@ const classes = clsx(
   'hover:text-white hover:bg-bluer-500 hover:border-transparent',
   className
 )
-  return <button 
+  return <button
+  type={type}
   style={{color: _color, backgroundColor: _bgColor}}
   onClick={onClick}
   className={classes}
@@ -66,6 +68,6 @@ const UserForm = () =>{
     </div>
   )
 }
-const  
+const
 /*
 */
