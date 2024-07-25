@@ -1,20 +1,20 @@
 import React, { MouseEventHandler, useContext } from 'react'
-import { AuthContext } from './AuthContext'
+import { AuthContext, useAuthContext } from './AuthContext'
 import { Button } from '@ems/common-ui'
 
 
 
 const AuthCredentials = () => {
-    const context = useContext(AuthContext);
+    const context = useAuthContext()
     const handleClick: MouseEventHandler<HTMLButtonElement>= () =>{
-        context.setIsLogged((value) => !value)
+        context.toggle();
     }
   return (
     <div>
         <h3>
             AuthCredentials
             </h3>
-            <p>is user logged? {context.isLoggedIn ? 'yes': 'no'}</p>
+            <p>is user logged? {context.isLogged ? 'yes': 'no'}</p>
             <Button onClick={ handleClick} label={'toggle auth'} />
     </div>
   )

@@ -41,6 +41,9 @@ Thumbs.db
 # Next.js
 .next
 
-/.nx
+.nx/*
+.nx/cache/file-map.json
+.nx/cache/d/*
+.nx/cache/*
 
-.nx
+# .nx/cache

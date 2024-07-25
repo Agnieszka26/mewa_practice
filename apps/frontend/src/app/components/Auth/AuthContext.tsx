@@ -1,22 +1,37 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from "react";
+
+
 type AuthContextType = {
-    isLoggedIn: boolean;
-    setIsLogged: Dispatch<SetStateAction<boolean>>
+    isLogged: boolean;
+    login: () => void;
+    logout: () => void;
+    toggle: () => void;
 }
+
 const useAuth = () => {
     const [isLogged, setIsLogged] = useState<boolean>(false);
 
-    const login = ( ) => {setIsLogged(true)  }
-    const logout = ( ) => { setIsLogged(false)  }
-const toggle = ( ) => {  setIsLogged(s => !s) }
+    const login = () => { setIsLogged(true) }
+    const logout = () => { setIsLogged(false) }
+    const toggle = () => { setIsLogged(s => !s) }
 
-return {isLogged, login, logout, toggle}
- }
-export const AuthContext = createContext<AuthContextType>({ isLoggedIn: false, setIsLogged: () => null });
+    return { isLogged, login, logout, toggle }
+}
+export const AuthContext = createContext<AuthContextType | null>(null);
+
+export const useAuthContext = () => {
+    const context = useContext(AuthContext);
+    if (context) {
+        return context
+    } else {
+        throw new Error('Component should be placed inside AuthContextProvider')
+    }
+}
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-    const {isLogged, login, logout, toggle} = useAuth();
-    return <AuthContext.Provider value={{isLogged, toggle }}>
+
+
+    return <AuthContext.Provider value={useAuth()}>
         {children}
     </AuthContext.Provider>
 }
