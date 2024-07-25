@@ -1,12 +1,19 @@
-import React from 'react'
+import { AuthContextProvider } from '../components/Auth/AuthContext'
+import AuthInfo from '../components/Auth/AuthInfo'
 
-type Props = {}
 
-const HomePage = (props: Props) => {
+
+const HomePage = () => {
+
     return (
         <div>
             <h1> Home page </h1>
             <p> routed pages </p>
+            <AuthContextProvider>
+
+                <AuthInfo />
+            </AuthContextProvider>
+
         </div>
     )
 }
