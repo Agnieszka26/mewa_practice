@@ -9,9 +9,12 @@ import { ROUTE } from "./routes";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { useState } from "react";
 
+import { worker } from "../mocks/browser";
 
 export function App() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
+
+
   const router = createBrowserRouter([{
     path: '/',
     element: <Layout />,
