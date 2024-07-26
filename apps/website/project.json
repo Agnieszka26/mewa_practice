@@ -30,10 +30,12 @@
       "configurations": {
         "development": {
           "buildTarget": "website:build:development",
+          "port": 4301,
           "dev": true
         },
         "production": {
           "buildTarget": "website:build:production",
+          "port": 4302,
           "dev": false
         }
       }
