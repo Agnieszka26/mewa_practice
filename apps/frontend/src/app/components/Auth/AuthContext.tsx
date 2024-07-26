@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 
 type AuthContextType = {
@@ -13,7 +13,7 @@ const useAuth = () => {
 
     const login = () => { setIsLogged(true) }
     const logout = () => { setIsLogged(false) }
-    const toggle = () => { setIsLogged(s => !s) }
+    const toggle = () => { setIsLogged(logged => !logged) }
 
     return { isLogged, login, logout, toggle }
 }
