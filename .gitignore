@@ -42,7 +42,8 @@ Thumbs.db
 .next
 
 .nx/*
-.nx/cache/file-map.json
+.nx/cache
+.nx/workspace-data/file-map.json
 .nx/cache/d/*
 .nx/cache/*
 
