@@ -8,7 +8,7 @@ type AuthContextType = {
     toggle: () => void;
 }
 
-const useAuth = () => {
+export const useAuth = () => {
     const [isLogged, setIsLogged] = useState<boolean>(false);
 
     const login = () => { setIsLogged(true) }
