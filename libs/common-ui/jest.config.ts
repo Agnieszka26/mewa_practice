@@ -3,7 +3,7 @@ export default {
   displayName: 'common-ui',
   preset: '../../jest.preset.js',
   globals: {
-    NODE_ENV: 'test'
+    NODE_ENV: process.env.NODE_ENV
   },
   testEnvironment: 'jsdom',
   transform: {
