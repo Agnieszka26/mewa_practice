@@ -6,7 +6,7 @@ buildCommand = "npx nx build website"
 [deploy]
 runtime = "V2"
 numReplicas = 1
-startCommand = "npx nx run website:build:development"
+startCommand = "npx nx run website:serve:production"
 sleepApplication = false
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
