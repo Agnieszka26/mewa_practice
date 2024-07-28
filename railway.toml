@@ -1,7 +1,7 @@
 [build]
 builder = "NIXPACKS"
 buildCommand = "npx nx build website"
-
+watchPatterns = ["/frontend"]
 
 [deploy]
 runtime = "V2"
