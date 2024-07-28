@@ -6,11 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/common-ui/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "build": {
       "executor": "@nx/vite:build",
@@ -33,12 +29,11 @@
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/common-ui/jest.config.ts",
-        "passWithNoTests": true
+        "watch": true
       },
       "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+        "watch": {
+          "watch": true
         }
       }
     },
@@ -69,6 +64,6 @@
     },
     "chromatic": {
       "command": "npx nx build-storybook common-ui && npx chromatic --project-token=chpt_8df574105f52368 -d=dist/storybook/common-ui"
-  }
+    }
   }
 }
