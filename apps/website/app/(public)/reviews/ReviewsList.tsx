@@ -1,25 +1,8 @@
 'use client'
+import { AirtableReviewResponseDto, Review } from "apps/website/types";
+import { format } from "date-fns";
 import { useEffect, useState } from 'react';
 
-type Review = {
-    id: string;
-    content: string;
-    author: string;
-    points: string;
-    created: string
-}
-
-type AirtableReviewResponseDto = {
-    records: {
-        id: string;
-        fields: {
-            content: string;
-            author: string;
-            points: string;
-            Created: string
-        }
-    }[]
-}
 
 
 const ReviewsList = () => {
@@ -38,12 +21,12 @@ const ReviewsList = () => {
                     content,
                     author,
                     points,
-                    created: Created
+                    created: format(Created, 'dd.MM.yyyy')
                 })
             });
             setReviews(_reviews)
         })
-    },[])
+    }, [])
     return (
         <div>
             <h2>
