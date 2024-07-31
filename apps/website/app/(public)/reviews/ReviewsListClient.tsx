@@ -1,5 +1,5 @@
 'use client'
-import { AirtableReviewResponseDto, Review } from "apps/website/types";
+import { AirtableReviewResponseDto, Review } from "../../../types";
 import { format } from "date-fns";
 import { useEffect, useState } from 'react';
 

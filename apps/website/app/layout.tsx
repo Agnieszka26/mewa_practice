@@ -1,5 +1,5 @@
 
-import { inter } from './fonts';
+import { inter } from '../fonts';
 import './styles.css';
 
 export const metadata = {

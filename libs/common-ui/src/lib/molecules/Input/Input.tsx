@@ -5,8 +5,10 @@ import { Label } from "../../atoms/Label";
 
 type Props = {
   label: string;
+  name: string;
+  error?: string| undefined
 };
-export const Input = forwardRef( ({ 'aria-label': ariaLabel, onChange, value, label, type, className, ...rest }: Pick<ComponentProps<'input'>, "value" | 'className' | 'onChange' | 'aria-label' | 'type' | 'ref'> & Props,
+export const Input = forwardRef( ({ 'aria-label': ariaLabel,onChange, name, value, label, type, className, ...rest }: Pick<ComponentProps<'input'>, "value" | 'className' | 'onChange' | 'aria-label' | 'type' | 'ref' > & Props,
   ref: Ref<HTMLInputElement>
 
 ) => {
@@ -29,6 +31,7 @@ export const Input = forwardRef( ({ 'aria-label': ariaLabel, onChange, value, la
 
     <input
       className={classesInput}
+      name={name}
       ref={ref}
       type={type}
       id={id}
