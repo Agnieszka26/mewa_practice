@@ -8,15 +8,7 @@ export type Review = {
 };
 
 export type AirtableReviewResponseDto = {
-  records: {
-    id: string;
-    fields: {
-      content: string;
-      author: string;
-      points: string;
-      Created: string;
-    };
-  }[];
+  records: AirtableReview[];
 };
 export type CreateReviewClientStatus =
 //   | {
@@ -50,3 +42,16 @@ export const createReviewSchema = z.object({
 });
 
 export type CreateReviewDto = z.infer<typeof createReviewSchema>;
+
+
+export type AirtableFields ={
+  content: string;
+  author: string;
+  points: string;
+  Created: string;
+}
+
+export type AirtableReview = {
+  id: string;
+  fields: AirtableFields
+}

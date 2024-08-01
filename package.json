@@ -2,7 +2,12 @@
   "name": "@ems/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "generate:types": "nx run prisma-schema:generate-types",
+    "postinstall": "npm run generate:types",
+    "build": "npm run generate:types && nx run website:build:production"
+
+  },
   "private": true,
   "engines": {
     "node": "20.x"
@@ -53,6 +58,7 @@
     "@nx/vite": "19.5.3",
     "@nx/webpack": "19.5.3",
     "@nx/workspace": "19.5.3",
+    "@prisma/client": "^5.17.0",
     "@storybook/addon-a11y": "7.1.0",
     "@storybook/addon-essentials": "7.1.0",
     "@storybook/addon-interactions": "7.1.0",
@@ -62,6 +68,7 @@
     "@storybook/core-server": "7.1.0",
     "@storybook/nextjs": "7.1.0",
     "@storybook/react-vite": "7.1.0",
+    "@swc-node/register": "~1.9.1",
     "@swc/cli": "0.3.14",
     "@swc/core": "1.5.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -97,6 +104,7 @@
     "nx": "19.5.3",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",
+    "prisma": "^5.17.0",
     "storybook-dark-mode": "^3.0.0",
     "tailwindcss": "3.4.3",
     "ts-jest": "^29.1.0",

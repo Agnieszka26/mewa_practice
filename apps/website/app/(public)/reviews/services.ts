@@ -1,11 +1,12 @@
 import { format } from 'date-fns';
 import {
+  AirtableReview,
   AirtableReviewResponseDto,
   CreateReviewDto,
   Review,
 } from '../../../types';
 
-// this is intentional redundancy
+// this is intentional redundancy for learnig purpose
 export const fetchReviewsCount = async () => {
   const r = await fetch(
     process.env.NEXT_PUBLIC_AIRTABLE_BASE_URL ??
@@ -61,6 +62,26 @@ export const fetchReviews = async () => {
     });
   return r;
 };
+
+export const fetchReview = async (publicId: string) => {
+  const r = await fetch(
+    `${process.env.NEXT_PUBLIC_AIRTABLE_BASE_URL}/${publicId}`,
+
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN}`,
+      },
+    }
+  )
+    .then((response) => response.json())
+    .then((data:AirtableReview) => {
+
+
+      return data;
+    });
+  return r;
+};
+
 
 export const createReviewInAirtable = async (review: CreateReviewDto) => {
 
